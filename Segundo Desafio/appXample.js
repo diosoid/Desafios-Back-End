@@ -47,11 +47,11 @@ const manager = new ProductManager('products.json');
     console.log( await manager.getProducts());
     
 
-    await manager.deleteProduct(1)
+    await manager.deleteProd(1)
 
     console.log( await manager.getProducts());
 
-    await manager.getProductByID(1)
+    await manager.getProductById(1)
 
     
 }) ()

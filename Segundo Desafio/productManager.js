@@ -38,6 +38,16 @@ class ProductManager {
 
     }
 
+    getProductById = async (id) => {
+        const list = await this.read()
+        const idx = list.find(e => e.id == id)
+
+        idx
+        ? console.log(idx)
+        : console.log("El producto seleccionado no se encontro.") 
+        
+    }
+
     updateProduct = async (id, obj) => {
         obj.id = id
         const list = await this.read()
@@ -46,7 +56,7 @@ class ProductManager {
             if(list[i].id == id){
                 list[i] = obj
                 break
-            }
+            }x
         }
 
         await this.write(list)
