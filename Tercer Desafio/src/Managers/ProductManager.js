@@ -74,6 +74,7 @@ export class ProductManagerFilesystem {
             throw new NotFoundError("Producto no fue encontrado")
         }
 
+        
         const product = products[productIndex]
 
         products [productIndex] = {...product, ...newData}
