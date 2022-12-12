@@ -84,4 +84,19 @@ export class ProductManagerFilesystem {
         return products [productIndex]
     }
 
+    async deleteProduct(id){
+        const products = await this.getProducts()
+
+        const productIndex = products.findIndex((product) => product.id === id)
+
+        if (productIndex === -1) throw new NotFoundError("Producto no encontrado")
+
+        const deletedProducts  = products.splice(productIndex, 1)
+
+        await this.#writeFile(products)
+
+        return deletedProducts[0]
+
+    }
+
 }
