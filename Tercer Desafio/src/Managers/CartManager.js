@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { NotFoundError, ValidationError } from '../utils/index.js';
 
-export class ProductManagerFilesystem {
+export class CartManagerFilesystem {
     constructor(path){
         this.path= path;
 

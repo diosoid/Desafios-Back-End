@@ -71,18 +71,9 @@ const routerProducts = Router()
                 })
             }
     
-            const checkCode = this.products.find((e) => e.code == code);
-            if (checkCode) {
-            return "El articulo ya fue ingresado, por favor ingrese un producto diferente";
-            }
-    
-            const productId =
-            this.products.length > 0
-              ? this.products[this.products.length - 1].id + 1
-              : 1;
     
             const savedProduct = await productManager.saveProduct({
-                id: productId,
+           
                 title,
                 description,
                 price,
