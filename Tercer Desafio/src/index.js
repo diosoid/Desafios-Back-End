@@ -76,7 +76,7 @@ app.get('/api/products/:id', async (req, res) => {
         //MESSAGES.BIENVENIDO
         //ERRORS.VALIDATION_ERROR
 
-        const {title, description, price, code} = req.body;
+        const {title , description , price , thumbnail , code , stock} = req.body;
 
         if(!title || !description || !price || !thumbnail || !code || !stock ){
             return res.send({           
@@ -133,12 +133,14 @@ app.get('/api/products/:id', async (req, res) => {
           })
         }
 
-          const {title, description, price, code} = req.body;
+          const {title , description , price , thumbnail , code , stock} = req.body;
 
           const updatedProduct = await productManager.update(id, {
             title,
             description,
             price,
+            thumbnail,
+            stock,
             code,
         })
 
